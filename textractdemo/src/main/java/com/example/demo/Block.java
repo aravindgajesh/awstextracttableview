@@ -34,6 +34,10 @@ public class Block{
     @JsonProperty("ColumnSpan") 
     public long columnSpan;
     
+    @JsonProperty("EntityTypes") 
+    public List<String> entityTypes;
+    
+    
 	public String getBlockType() {
 		return blockType;
 	}
@@ -105,6 +109,12 @@ public class Block{
 	}
 	public void setColumnSpan(long columnSpan) {
 		this.columnSpan = columnSpan;
+	}
+	public List<String> getEntityTypes() {
+		return entityTypes;
+	}
+	public void setEntityTypes(List<String> entityTypes) {
+		this.entityTypes = entityTypes;
 	}
     
     

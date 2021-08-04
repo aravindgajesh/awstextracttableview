@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -17,11 +15,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class TextractdemoApplicationOld {
 
-	public static void mainTest(String[] args) {
-		SpringApplication.run(TextractdemoApplicationOld.class, args);
+	public static void main(String[] args) {
 		ObjectMapper om = new ObjectMapper();
 		try {
-			Root root = om.readValue(new File("src/main/resources/apiResponse.json"), Root.class);
+			Root root = om.readValue(new File("src/main/resources/apiResponse_full.json"), Root.class);
 			System.out.println("START");
 			List<TableModel> tablesFromTextract = getTablesFromTextract(root);
 			List<NetworkBean5> networkBean5List = new ArrayList<NetworkBean5>();
